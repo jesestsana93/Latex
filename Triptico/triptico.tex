@@ -1,0 +1,84 @@
+% leaflet se usa para triptico
+%5-6-1-2-3-4 posiciones para el triptico
+\documentclass[10pt, notumble, letterpaper]{leaflet}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+%Paquete para darle color al documento(secciones)
+\usepackage[usernames]{xcolor}
+
+\pagestyle{empty}
+
+\title{Congreso Nacional de \LaTeX}
+
+\author{Carlos Pérez}
+
+\date{10-12, febrero, 2015}
+
+%Marcas que dividen al triptico
+\CutLine*{1}% linea punteada sin tijeras
+\CutLine*{3}% linea punteada sin tijeras
+\CutLine*{4}% linea punteada sin tijeras
+\CutLine{6}% linea punteada con tijeras
+
+\begin{document}
+\pagecolor{yellow}
+
+\maketitle
+
+\thispagestyle{empty}
+
+\section{Talleres}
+
+Talleres disponibles:
+
+\begin{table}[h!]
+\begin{tabular}{ccc}
+ Taller & Costo & Fechas \\
+ \LaTeX{} & \$ 500.00 & febrero 10 \\
+ Excel & \$ 500.00 & febrero 11 \\
+ Linux & \$ 500.00 & febrero 12
+\end{tabular}
+\end{table}
+
+\newpage
+\pagecolor{white}%Aqui cambia nuevamente de color
+
+\section{Sección 2}
+
+Texto en la sección 2
+\begin{center}
+\includegraphics[scale=0.2]{escudoCiencias}
+\end{center}
+
+
+\newpage
+
+\section{Sección 3}
+
+Texto en la sección 3
+
+\newpage
+
+\section{Sección 4}
+
+Texto en la sección 4
+
+\newpage
+
+\section{Sección 5}
+
+Texto en la sección 5
+
+\newpage
+\pagecolor{blue}
+\section{Sección 6}
+
+Texto en la sección 6
+
+%Son 6 secciones en el triptico
+\section{Sección 7}
+
+Texto en la sección 7
+
+\end{document}

@@ -1,0 +1,3 @@
+La manera de compilar este archivo es con PDFLaTeX dos veces y posteriormente dar clic en PDF para que se pueda ver el tríptico.
+Alumno: Sánchez Alcántara Jesús Esteban
+Núm.cta: 309267526

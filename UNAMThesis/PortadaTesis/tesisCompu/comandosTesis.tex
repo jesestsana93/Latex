@@ -1,0 +1,18 @@
+
+\newcommand{\tituloTesis}[1]{\def\eltituloTesis{#1}}
+\newcommand{\titulo}[1]{\def\elTitulo{#1}}
+\newcommand{\nombre}[1]{\def\elnombre{#1}}    %* Del alumno
+\newcommand{\appat}[1]{\def\elApPaterno{#1}}    %* Del alumno
+\newcommand{\apmat}[1]{\def\elApMaterno{#1}}    %* Del alumno
+\newcommand{\director}[1]{\def\eldirector{#1}}  %* De tesis
+\newcommand{\fecha}[1]{\def\lafecha{#1}}
+\newcommand{\logoUNAM}[1]{\def\ellogoUNAM{#1}}
+\newcommand{\logoCiencias}[1]{\def\ellogoCiencias{#1}}
+
+\newenvironment{changemargin}[2]{% 
+\begin{list}{}{% 
+\setlength{\topsep}{20pt}% 
+\setlength{\leftmargin}{#1}% 
+\setlength{\rightmargin}{#2}% 
+}% 
+\item[]}{\end{list}} 

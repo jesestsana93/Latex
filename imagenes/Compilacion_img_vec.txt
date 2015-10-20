@@ -1,0 +1,5 @@
+Para compilar con las imagenes vectoriales en latex hacemos lo siguiente:
+1.En el compilador le damos que sea con latex en lugar de pdflatex
+2. El archivo se visualiza como .dvi
+
+Si se quiere en pdf, se pone en el compilador dvi -> pdf

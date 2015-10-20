@@ -1,0 +1,177 @@
+\documentclass[letterpaper,12pt,twoside]{book}
+
+%\newcommand{Nombre}{Expresion}
+\newcommand{\hola}{\textit{\textbf{\Huge{Hola}}}}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}    
+\usepackage[spanish,mexico]{babel} 
+
+\usepackage{amsmath}		
+\usepackage{amssymb}		
+\usepackage{amsfonts}
+\usepackage{latexsym}
+
+\usepackage{graphicx}
+
+% Información para el título
+\title{Cambiar Nombres de Elementos del Documento}
+\author{J. Luis Torres}
+
+% El comando "renewcommand permite cambiar los nombres usados por LaTeX para algunos de los elementos del
+% documento. Su sintaxis es:
+%
+% \renewcommand{comando}{Nuevo nombre}
+%
+% Algunos de los comandos más comunes son:
+%
+% Comando:			Valor predeterminado:
+% \abstractname			Resumen
+% \appendixname			Apéndice
+% \bibname				Bibliografía (clases book y report)
+% \refname				Referencias  (clase artículo)
+% \chaptername			Capítulo
+% \contentsname			Índice general
+% \figurename			Figura
+% \listfigurename		Índice de Figuras
+% \listtablename		Índice de Tablas
+% \pagename				Página
+% \partname				Parte
+% \tablename			Tabla
+
+% Por otro lado, podemos cambiar la numeración de las páginas con el siguiente comando:
+% \setcounter{page}{número}
+% También podemos especificar el tipo de números a usar con el comando:
+% \pagenumbering{estilo}
+% Donde "estilo" puede ser: 
+% arabic - Números arábigos
+% roman - Números romanos en minúsculas.
+% Roman - Números romanos en mayúsculas.
+% alph - Numeración alfabética con minúsculas.
+% Alph - Numeración alfabética con mayúsculas. 
+
+\begin{document}
+
+%\renewcommand{\chaptername}{Contenido}
+% Por ejemplo:
+%Para comentar varios bloques, selecciono la parte a comentar mas Cntrl t
+\renewcommand{\contentsname}{Lista de Temas}
+\renewcommand{\partname}{Bloque}
+\renewcommand{\chaptername}{Tema}
+\renewcommand{\appendixname}{Complemento}
+\renewcommand{\figurename}{Imagen}
+\renewcommand{\listfigurename}{Lista de Imagenes}
+\renewcommand{\tablename}{Cuadro}
+\renewcommand{\listtablename}{Lista de Cuadros}
+\renewcommand{\bibname}{Libros}
+
+\maketitle
+\thispagestyle{empty}
+
+\frontmatter
+\setcounter{page}{1}
+
+\tableofcontents
+
+\listoffigures
+\addcontentsline{toc}{chapter}{Lista de Imagenes}
+
+\listoftables
+\addcontentsline{toc}{chapter}{Lista de Cuadros}
+
+\mainmatter
+
+\part{Elementos Flotantes}
+
+\chapter{Imagenes}
+
+\hola
+
+Escudo de la Facultad de Ciencias:
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{escudoCiencias}
+\caption{Facultad de Ciencias}
+\end{figure}
+
+\chapter{Tablas}
+
+\LaTeX{} soporta diferentes tipos de tablas.
+
+\section{Tabla Simple}
+
+El siguiente es un ejemplo sencillo de tabla:
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline 
+		$\alpha$ & $\beta$ & $x^2+y^2$ \\ 
+		\hline 
+		76.267 & \LaTeX & $\frac{2x}{\gamma}$ \\ 
+		\hline 
+		36 & hola & encabezados \\ 
+		\hline 
+	\end{tabular} 
+	\caption{Tabla de datos}
+\end{table}
+
+\part{Expresiones Matemáticas}
+
+\chapter{Matemáticas}
+
+Capítulo de expresiones matemáticas.
+
+\section{Expresiones matemáticas}
+
+\[ f(x) = \left\{ a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{a_3 + \cfrac{1}{a_4} } } } \right. \]
+
+$$\sum_{A} a_i = \sum_{i=1}^n a_i $$
+
+\appendix
+
+\chapter{Símbolos}
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\LaTeX{} nos permite ingresar diversos tipos de símbolos matemáticos, entre otros podemos mencionar:
+
+$\aleph$
+
+$\delta$
+
+$\pm$
+
+$\subset${
+
+$\approx$
+
+$\in$
+
+$\bigcap$
+
+$\leqslant$
+
+$\geqslant$
+
+$\triangleright$
+
+$\wedge$
+
+$\diagdown$
+
+$\longleftrightarrow$
+
+$\Longleftrightarrow$
+
+\begin{thebibliography}{99}
+
+\bibitem{spivakCalc} Spivak, Michael; Calculus; Reverte; 1996.
+
+\bibitem{Lamport} Lamport, L.; \LaTeX{}; Addison-Wesley. 1996.
+
+\end{thebibliography}
+\addcontentsline{toc}{chapter}{Bibliografía}
+
+\end{document}

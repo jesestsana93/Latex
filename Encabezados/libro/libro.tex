@@ -1,0 +1,238 @@
+\documentclass[letterpaper,12pt,twoside]{book}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}    
+\usepackage[spanish,mexico]{babel} 
+
+\usepackage{amsmath}		
+\usepackage{amssymb}		
+\usepackage{amsfonts}
+\usepackage{latexsym}
+
+
+%Estilos al documento
+%\pagestyle{empty}
+%\pagestyle{plain} y asi, se prueban las opciones de abajo
+
+% Encabezados - OPCIÓN 1
+%
+% El siguiente comando nos permite especificar el estilo de la página de nuestro documento.
+% Las opciones posibles son:
+% empty - El encabezado y el pie se dejan vacíos, incluso se elimina el número de página.
+% plain - Es el estilo predeterminado, el encabezado se deja vacío y el pie muestra el número de
+%         página centrado.
+% headings - El encabezado contiene el número y nombre de sección en la parte izquierda y el número de 
+%            página a la derecha. El pie se encuentra vacío, excepto en la primera página, en la cual
+%            el encabezado está vacío y el pie contiene el número de página centrado.
+% myheadings - El encabezado contiene el número de página a la derecha, el resto del encabezado puede ser 
+%              definida por el usuario; para esto se pueden usar los comandos:
+%              \markright - para documentos de clase book, report y article.
+%              \markboth  - únicamente para documentos de clase book.
+% Por ejemplo, las siguientes instrucciones colocan "Carlos Pérez" a la izquierda del encabezado, 
+% "Manual de LaTeX" en el centro y el número de página a la derecha: 
+% \pagestyle{myheadings} 
+% \markright{Carlos Pérez\hfill Manual de \LaTeX \hfill}
+%
+% Para indicar el contenido del encabezado y el pie se pueden usar las siguientes expresiones:
+% \thepage - Número de la página actual.
+% \leftmark - Nombre y número de la estructura de más alto nivel del documento; capítulo para los libros y 
+%             reportes, sección para los artículos.
+% \rightmark - Nombre y número de la estructura del siguiente nivel en el documento; sección en libros y
+%              reportes, subsección en los artículos.
+%              En el caso de los artículos solamente se muestra el número de la sección.
+% \chaptername - Agrega la palabra "Capítulo" o su equivalente en el idioma actual.
+% \thechapter - Número del capítulo actual.
+% \thesection - Número de la sección actual.
+
+% Se puede especificar el estilo de una página de forma independiente con el comando:
+% \thispagestyle{estilo}
+% Donde "estilo" es uno de los indicados arriba.
+
+% Ejemplos de estilos de encabezados:
+%\pagestyle{plain}
+
+% Ejemplo 1:
+%\pagestyle{myheadings} 
+%\markboth{\hfill Manual de \LaTeX \hfill Chucho Pérez}{Chucho Pérez\hfill Manual de \LaTeX \hfill}
+
+% Ejemplo 2:
+%\pagestyle{myheadings}
+%\markboth{\thechapter}{\thesection}
+%\renewcommand{\sectionmark}[1]{\markright{Sección - #1}{}}
+%\renewcommand{\chaptermark}[1]{\markboth{\chaptername - #1}{}}
+
+% Encabezados - OPCIÓN 2
+%
+% El paquete fancyhdr también nos permite especificar el formato del encabezado:
+\usepackage{fancyhdr}
+%
+% En este caso el estilo que se debe usar es:
+ \pagestyle{fancy}
+% Con este estilo se coloca el número y nombre de sección (en este orden) en la parte derecha del encabezado.
+% El pie contiene el número de página centrado y se agrega una línea para el encabezado.
+% Este estilo se puede personalizar considerando lo siguiente:
+%
+% Para documentos de un sólo lado se puede especificar el formato de la siguiente forma:
+%
+% Encabezado:
+% \fancyhead[<Página><Posición>]{}
+% Pie:
+% \fancyfoot[<Página><Posición>]
+%
+% Donde Página puede ser:
+% L - Izquierda
+% C - Centro
+% R - Derecha
+%
+% Posición puede ser:
+% E - Par
+% O - Impar
+%
+% Por ejemplo:
+% \fancyhead[LE]{}
+% Hace referencia a la parte izquierda del encabezado de una página par.
+%
+% Podemos agregar una línea en el encabezado y el pie con los siguientes comandos:
+% \headrulewidth{ancho}
+% \footrulewidth{ancho}
+
+% Cargamos los paquetes
+\usepackage{fancyhdr}
+% El estilo será aplicado por el paquete.
+\pagestyle{fancy}
+% El siguiente comando elimina los encabezados y pies definidos por LaTeX:
+\fancyhf{}
+
+%\fancyhead[POSICION(ES)]{contenido}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE,LO]{Taller de \LaTeX{}}
+
+\fancyfoot[CE]{Jesús Sánchez}
+\fancyfoot[CO]{Libro de \LaTeX{}}
+
+%Lineas en ecnabezado y pie de pagina respectivamente
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+
+%Esto va en el articulo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+%Nota: se cargan primero los paquetes \usepackage{fancyhdr} y \pagestyle{fancy}
+%\fancyhf{}
+%\lhead{Jesús Sánchez}
+%\chead{Taller de \LaTeX{}}
+%\rhead{\the\year}
+%
+%\lfoot{Chivas}
+%\cfoot{Climaco}	
+%\rfoot{\thepage}
+%%para poner lineas en encabezado y pie de pagina
+%\renewcommand{\headrulewidth}{3pt}
+%\renewcommand{\footrulewidth}{1pt}
+%Hasta aqui termina lo que va en el articulo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+% Renombraremos la marca de sección para que contenga la palabra "Sección" y el nombre de ésta.
+%\renewcommand{\sectionmark}[1]{\markright{Sección - #1}{}}
+% La marca de capítulo contendrá el nombre de éste.
+%\renewcommand{\chaptermark}[1]{\markboth{\chaptername - #1}{}}
+
+% Colocaremos una línea en el encabezado y en el pie.
+%\renewcommand{\headrulewidth}{2pt}
+%\renewcommand{\footrulewidth}{0.5pt}
+
+% Ejemplo 1:
+%\fancyhead[LE,RO]{Página - \thepage}
+%\fancyhead[CE,CO]{\leftmark}
+%\fancyhead[RE,LO]{\thechapter}
+%\fancyfoot[LE,RO]{\rightmark}
+%\fancyfoot[RE,LO]{Taller de \LaTeX}
+
+% Ejemplo 2:
+%\fancyhead[LE,RO]{\rightmark}
+%\fancyhead[RE]{\leftmark}
+%\fancyhead[LO]{Taller de \LaTeX}
+%\fancyfoot[LE,RO]{\thepage}
+
+% Diseño de la página.
+
+% geometry nos permite establecer el tamaño de los elementos para el diseño de la página.
+%\usepackage[lmargin=2.5cm,rmargin=3cm,top=2.5cm,bottom=3cm]{geometry}
+%\usepackage[letterpaper]{geometry}
+
+% layout nos permite desplegar los elementos de la página, correspondientes al diseño de la misma.
+%\usepackage{layout}
+
+% showframe nos muestra la caja de texto de nuestro documento.
+%\usepackage{showframe}
+
+% Las medidas de los elementos del diseño de la página se pueden modificar de la siguiente forma:
+%\setlength{\headheight}{20pt}
+%\setlength{\headsep}{30pt}
+%\setlength{\topmargin}{-10pt}
+%\setlength{\footskip}{20pt}
+
+% Información para el título
+\title{Encabezados y pies de página}
+\author{J. Luis Torres}
+
+\begin{document}
+
+% Mostrar el diseño de la página.
+%\layout{}
+%\newpage
+
+\maketitle
+%Agrego estilo a solo esta pagina
+\thispagestyle{empty}
+
+\chapter{Marco Teórico}
+Un poco de texto ...
+
+\newpage
+
+\section{Primera sección}
+
+Para establecer los encabezados de nuestro documento podemos proceder de la siguiente forma:
+
+... en un futuro próximo ...
+
+
+\chapter{Tablas y Gráficas}
+
+Texto del capítulo dos...
+
+\newpage
+
+\section{Elementos flotantes}
+
+Además debemos tener en cuenta ...
+
+\newpage
+
+\section{Tablas}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline 
+		$\alpha$ & $\beta$ & $x^2+y^2$ \\ 
+		\hline 
+		76.267 & \LaTeX & $\frac{2x}{\gamma}$ \\ 
+		\hline 
+		36 & hola & encabezados \\ 
+		\hline 
+	\end{tabular} 
+	\caption{Tabla de datos}
+\end{table}
+
+\chapter{Matemáticas}
+
+Capítulo de expresiones matemáticas...
+
+\newpage
+
+\section{Expresiones matemáticas}
+
+\[ f(x) = \left\{ a_0 + \cfrac{1}{a_1 + \cfrac{1}{a_2 + \cfrac{1}{a_3 + \cfrac{1}{a_4} } } } \right. \]
+
+$$\sum_{A} a_i = \sum_{i=1}^n a_i $$
+\end{document}

@@ -1,0 +1,7 @@
+\select@language {spanish}
+\contentsline {section}{Tr\IeC {\'\i }pticos usando la clase leaflet}{2}
+\contentsline {section}{Otra secci\IeC {\'o}n}{2}
+\contentsline {section}{Expresiones matem\IeC {\'a}ticas en un tr\IeC {\'\i }ptico}{3}
+\contentsline {section}{Im\IeC {\'a}genes en el tr\IeC {\'\i }ptico}{4}
+\contentsline {section}{Tablas en el tr\IeC {\'\i }ptico}{5}
+\contentsline {section}{Otras cosas}{6}

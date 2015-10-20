@@ -1,0 +1,248 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage[utf8]{inputenc} % Soporte para acentos
+\usepackage[T1]{fontenc}    
+\usepackage[spanish,mexico]{babel} % Español
+
+% Soporte de símbolos adicionales (matemáticas)
+\usepackage{amsmath}		
+\usepackage{amssymb}		
+\usepackage{amsfonts}
+\usepackage{latexsym}
+
+\usepackage[lmargin=2cm,rmargin=2cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage{tikz}
+
+\usepackage{pgfplots}
+%\pgfplotsset{compat=newest}
+
+% Información para el título
+\title{Figuras con TikZ}
+\author{J. Luis Torres}
+
+\begin{document}
+
+\maketitle
+
+\section{TikZ}
+
+El paquete  \textit{tikz} nos permite crear figuras en documentos de \LaTeX{}. Para poder llevar a cabo esto podemos hacer uso del entorno \textbackslash begin\{tikzpicture\} \textbackslash end\{tikzpicture\} o bien \textbackslash tikz[opciones]\{comandos de tikz\}.
+
+\medskip%Salto de línea entre la figura y el texto
+
+Veamos algunos ejemplos:
+
+\medskip
+
+Una línea:
+
+\medskip
+
+%Entorno para crear gráficos
+\begin{tikzpicture}
+%\draw(primer punto) linea (segundo punto"10 cm a la derecha y 20 puntos arriba);
+\draw (0,0) --(10cm,20pt);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+%\draw(primer punto) linea (segundo punto"10 cm a la derecha y 20 puntos arriba);
+\draw (1,0) --(2cm,4cm)--(4cm,-3cm)--(5,2)--cycle;
+%Con cicle indicamos que es una figura cerrada
+\end{tikzpicture}
+\medskip
+
+Una poligonal:
+
+\medskip
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\draw (0,0) --(1,2) -- (2,3) -- (1,0);
+		%Genera la poligonal y un conjunto de "líneas de ayuda"
+		\draw[help lines] (0,0) grid (2,3);
+	\end{tikzpicture}
+\end{figure}
+
+La misma, aplicando una escala:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=3]
+		\draw (0,0) --(1,2) -- (2,3) -- (1,0);
+		\draw[help lines] (0,0) grid (2,3);
+	\end{tikzpicture}
+	\caption{Ejemplo de TikZ}
+\end{figure}
+
+\newpage
+
+Flechas:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\draw [->] (0,0) -- (2,0);
+		\draw [<-] (0, -0.5) -- (2,-0.5);
+		\draw [|->] (0,-1) -- (2,-1);
+	\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\draw [->] (-2,0) -- (5,0);
+		\draw [->] (0,-2) -- (0,5);
+	\end{tikzpicture}
+\end{figure}
+
+Líneas de diferente ancho:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\draw [ultra thick] (0,1) -- (2,1);
+		\draw [thick] (0,0.5) -- (2,0.5);
+		\draw [thin] (0,0) -- (2,0);
+		\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\draw [->][ultra thick] (0,1) -- (2,1);
+		\draw [thick] (0,0.5) -- (2,0.5);
+		\draw [thin] (0,0) -- (2,0);
+		\end{tikzpicture}
+\end{figure}
+
+\medskip
+
+Líneas punteadas y en segmentos:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\draw [dashed, ultra thick] (0,1) -- (2,1);
+		\draw [dashed] (0, 0.5) -- (2,0.5);
+		\draw [dotted] (0,0) -- (2,0);
+	\end{tikzpicture}
+\end{figure}
+
+Colores:
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\draw [gray] (0,1) -- (2,1);
+		\draw [red] (0, 0.5) -- (2,0.5);
+		\draw [<->, dashed, blue] (0,0) -- (2,0);
+	\end{tikzpicture}
+\end{figure}
+
+Algunos de los colores predeterminados son: red , green , blue , cyan, magenta , yellow , black , gray , darkgray , lightgray ,
+brown , lime , olive , orange , pink , purple , teal , violet y blanco
+
+Este tipo de elementos se pueden colocar dentro de un texto: \begin{tikzpicture} \draw [yellow, line width=6] (0,0) -- (.5,0); \end{tikzpicture}, no
+es necesario colocarlos de forma independiente.
+
+Otro tipo de figuras:
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\draw [blue] (0,0) rectangle (1.5,1);
+	\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\draw [red, ultra thick] circle [radius=0.5];
+	\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\draw [gray] (0,0) arc [radius=1, start angle=45, end angle= 120];
+	\end{tikzpicture}
+\end{figure}
+
+Funciones:
+
+\begin{figure}[h!]
+	\begin{tikzpicture}[xscale=13,yscale=3.8]
+		\draw [<->] (0,0.8) -- (0,0) -- (0.5,0); %plot(variable, funcion) domain=indica que x va de 0 0.5 
+		\draw[green, ultra thick, domain=0:0.5] plot (\x, {0.025+\x+\x*\x});
+\end{tikzpicture}\end{figure}
+
+
+\newpage
+
+Imagenes con relleno:
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\draw [fill=red,ultra thick] (0,0) rectangle (1,1);
+		\draw [fill=red,ultra thick,red] (2,0) rectangle (3,1);
+		\draw [red, fill=blue] (4,0) -- (5,1) -- (4.75,0.15) -- (4,0);
+		\draw [fill] (7,0.5) circle [radius=0.1];
+		\draw [fill=orange] (9,0) rectangle (11,1);
+		\draw [fill=white] (9.25,0.25) rectangle (10,1.5);
+\end{tikzpicture}\end{figure}
+
+También podemos incluir texto:
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\draw [thick, <->] (0,2) -- (0,0) -- (2,0);
+		\node at (1,1) {yes};
+		\draw[help lines] (0,0) grid (2,2);
+	\end{tikzpicture}
+\end{figure}
+
+El texto lo podemos ubicar en otra posición:
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\draw [thick, <->] (0,2) -- (0,0) -- (2,0);
+		\node [above] at (1,1) {yes};
+		\draw[help lines] (0,0) grid (2,2);
+	\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+		\draw [thick, <->] (0,2) -- (0,0) -- (2,0);
+		\node [below] at (1,1) {$x^2+2x-1$};
+		\draw[help lines] (0,0) grid (2,2);
+	\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+	\draw (0,2)--(2,4)--(3,2)--(2,0);
+	\draw (3,2)--(4,0);
+	\draw [fill=white](2,4) circle [radius=0.25];%Primero el circulo y despues la letra
+	\node at (2,4) {A};
+	\draw [fill=white](3,2) circle [radius=0.25];
+	\node at (3,2) {C};
+		\node at (4,2.5) {Nodo C};
+	\draw [fill=white](2,0) circle [radius=0.25];
+	\node at (2,0) {D};
+	\end{tikzpicture}
+\caption{Arbol binario}
+\end{figure}
+
+\newpage
+
+\begin{tikzpicture} 
+	\begin{axis}[ 
+	     xlabel=$x$,
+		 ylabel={$f(x) = x^2 - x +4$}
+		] 
+		\addplot {x^2 - x +4};
+	\end{axis} 
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,80 @@
+\documentclass[letterpaper,12pt]{book}
+
+\usepackage[utf8]{inputenc} % Soporte para acentos
+\usepackage[T1]{fontenc}    
+\usepackage[spanish,mexico]{babel} % Español
+
+% Soporte de símbolos adicionales (matemáticas)
+\usepackage{amsmath}		
+\usepackage{amssymb}		
+\usepackage{amsfonts}
+\usepackage{latexsym}
+
+% Para inserción de imagenes
+\usepackage[pdftex]{graphicx}
+
+% Para crear bibliografía por capítulo o sección
+\usepackage[globalcitecopy]{bibunits}
+% Para este paquete el proceso de compilación se llevará a cabo de la siguiente forma:
+% - pdflatex
+% - bibtex
+% Por cada entorno bibunit se crearán archivos bu1.aux, bu2.aux, ...
+% Para cada uno de estos archivos se debe ejecutar el comando:
+% - bibtex bu1.aux
+% - bibtex bu2.aux
+% ... a continuación:
+% - pdflatex
+% - pdflatex
+
+\usepackage[lmargin=2cm,rmargin=2cm,top=2cm,bottom=2cm]{geometry}
+
+% Información para el título
+\title{Notas al Pie \\ 
+	\vspace{1cm}Tablas de Contenidos \\ 
+	\vspace{1cm}Índice de Figuras y Tablas\\
+	\vspace{1cm}Bibliografía}
+\author{J. Luis Torres}
+
+% Indicamos una separación entre los párrafos
+\parskip=3mm
+
+% Eliminamos la sangría de los párrafos
+\parindent=0mm
+
+\bibliographystyle{apalike}
+
+% El siguiente bloque es necesario para que la bibliografía en los capítulos se genere
+% con una estructura de sección. De lo contrario se colocará siempre en una página nueva.
+\let\stdthebibliography\thebibliography
+\renewcommand{\thebibliography}{%
+\let\chapter\subsection
+\stdthebibliography}
+
+\input{comandosTesis}
+\logoUNAM{unam}%Nombre de la imagen que contiene el escudo de la UNAM
+\logoCiencias{ciencias}
+\tituloTesis{TEOREMA DE LAMPORT}
+\nombre{JESUS}
+\appat{SANCHEZ}
+\apmat{ALCANTARA}
+\titulo{COMPU} %Titulo que voy a obtener
+\director{DR.PANCHO LOPEZ} 
+\fecha{\the\year}
+
+\begin{document}
+\input{portada}
+
+\maketitle
+
+\tableofcontents
+
+\include{cap1}
+\include{cap2}
+\include{cap3}
+\include{apendice}
+
+%\putbib[mibiblio]
+\bibliography{mibiblio}
+\addcontentsline{toc}{chapter}{Bibliografía}
+
+\end{document}

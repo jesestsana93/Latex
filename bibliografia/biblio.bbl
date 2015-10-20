@@ -1,0 +1,24 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Goossens et~al.(1993)Goossens, Mittelbach, and
+  Samarin]{latexCompanion}
+Michel Goossens, Frank Mittelbach, and Alexander Samarin.
+\newblock \emph{The \LaTeX{} Companion}.
+\newblock Addison-Wesley, 2 edition, 1993.
+
+\bibitem[Lamport(2014)]{lamportLatex}
+Leslie Lamport.
+\newblock Creaci\'on de documentos cient\'{\i}ficos.
+\newblock \emph{\LaTeX{} para todos}, 22\penalty0 (6):\penalty0 75--140, Junio
+  2014.
+
+\bibitem[CTAN(2015)]{ctanWebsite}
+CTAN.
+\newblock Comprehensite tex archive network, 2015.
+
+\end{thebibliography}

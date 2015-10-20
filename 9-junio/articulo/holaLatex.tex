@@ -1,0 +1,144 @@
+% Este es un comentario
+
+%\comando[opciones]{argumento}
+
+% Aquí comienza el preámbulo
+\documentclass[letterpaper,12pt]{article}
+
+% Soporte para acentos. Se puede usar latin1 o utf8, se recomienda utf8.
+\usepackage[utf8]{inputenc}
+
+%Otra manera de colocar acentos: b\'asica
+%Para la i: \'{\i}
+
+% Español, división de sílabas
+\usepackage[spanish,mexico]{babel}
+
+% Usar codificación T1
+\usepackage[T1]{fontenc}
+
+%Este comando permite convertir cualquier referencia en una liga
+\usepackage{hyperref}
+
+
+% Aquí termina el preámbulo e inmediatamente abajo inicia el cuerpo del documento
+%
+% Ninguna de las expresiones anteriores debe aparecer dentro del cuerpo del documento
+%
+\title{Mi primer documento de tipo artículo en la latex}
+\author{Jesús Sánchez}
+\date{9 de junio de 2015}
+
+%Cuerpo del documento
+\begin{document}
+
+\maketitle
+
+%Indice general
+\tableofcontents
+
+%Salto de página: \pagebreak o \newpage
+\pagebreak
+
+%vspace{1cm} separación en vertical
+Ejemplo de documento LaTeX de la clase {\ttfamily article} con una estructura básica. 
+Incluye una sección y una subsección. También se incluyen algunos otros  
+detalles básicos.
+
+\section{Primera sección}
+
+LaTeX nos permite crear distintas clases de documentos, entre las que se pueden mencionar: 
+\textit{book}, \textit{article}, \textit{report}, \textit{letter} y \textit{slides}, entre otras.
+%También puede ser \texit{book,article,report,letter y slides}
+
+\subsection{Clases de documentos}
+Todos ellos tienen diferentes características y formato. Por ejemplo, el estilo \textit{"book"} 
+(libro) coloca un estilo diferente a las páginas pares e impares, permite crear documentos 
+divididos en capítulos, introducir diferente  tipo de tablas de contenido, entre otros detalles.
+
+
+
+\subsubsection{Espacios}
+%\newline o \\ es equivalente al salto de linea
+En LaTeX los espacios y saltos de linea no siempre se toman de forma literal.
+Por ejemplo, un espacio        es      equivalente a      dos o más.\\
+Un salto de linea es equivalente a un espacio en blanco.
+
+
+
+Dos o más saltos de linea son equivalentes a un salto de linea.
+
+Se pueden introducir saltos de linea colocando una doble diagonal invertida.
+
+Se puede introducir un salto de pagina mediante el comando $\backslash$newpage o \textbackslash pagebreak.
+
+
+\newpage
+% Segunda sección
+\section{Caracteres especiales}
+\LaTeX %También se escribe como \LaTeX{}
+%Comillas: ''
+LaTeX hace uso de varios ''caracteres'' para indicar las operaciones que se llevarán a cabo sobre el texto, 
+a estos se les conoce como \emph{caracteres reservados}, todos ellos tienen un significado especial 
+para LaTeX, por lo que son interpretados por el compilador.
+
+Entre ellos se encuentran:
+
+\textbackslash
+
+\{
+
+\}
+
+\$
+
+\&
+
+\_
+
+\^{}
+
+\#
+
+\~{}
+
+\%
+
+A con acento circunflejo: \^a 
+
+U con dieresis:\"u
+
+Para hacer uso de estos caracteres es necesario \textit{escaparlos} o utilizar una expresion que los represente. Por ejemplo:
+
+$A = \{a, b, c\}$
+
+b\textbackslash a $= \frac{a}{b}$
+
+\section{Acentos}
+
+Los acentos en LaTeX se pueden escribir de la siguiente forma:
+%\verb@\ lo que tiene que desplegar tal cual @
+\verb@\'a@ = \'a
+
+\verb@\'A@ = \'A
+
+En el caso de la letra \~n, se puede introducir de esta forma:
+
+\verb@\~n@ = \~n
+
+\verb@\~N@ = \~N
+
+%\noident: para indicar que no debe de aplicar sangria al parrafo
+\noindent Otra forma de introducirlos es haciendo uso del paquete \textit{inputenc} el cual 
+permite escribir caracteres en el formato habitual, convirtiéndose internamente el texto 
+introducido a texto de LaTeX, de acuerdo con las diferentes tablas de equivalencia para las 
+distintas páginas de códigos y de forma completamente transparente al usuario.
+
+\noindent Para hacer uso de acentos, debemos poner al principio de nuestro documento, 
+en el preámbulo, lo siguiente:
+
+\verb@\usepackage[utf8]{inputenc}@
+
+Esto nos permite hacer uso de codificacion \textbf{utf-8}, la cual es la mas recomendada por ser un estandar que esta siendo adoptado en diversas areas.
+
+\end{document}

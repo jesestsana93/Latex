@@ -1,0 +1,15 @@
+\select@language {spanish}
+\contentsline {chapter}{Prologo}{2}
+\contentsline {section}{Subprologo}{2}
+\contentsline {chapter}{\numberline {1}Formato de texto}{3}
+\contentsline {section}{\numberline {1.1}Tipo de fuentes}{3}
+\contentsline {chapter}{\numberline {2}Tama\IeC {\~n}o de letras}{4}
+\contentsline {chapter}{\numberline {3}Texto centrado}{5}
+\contentsline {chapter}{\numberline {4}Texto alineado a la derecha}{6}
+\contentsline {chapter}{\numberline {5}Espacios verticales y horizontales}{7}
+\contentsline {chapter}{\numberline {6}Uso de columnas}{8}
+\contentsline {chapter}{\numberline {7}Notas al pie}{9}
+\contentsline {chapter}{\numberline {8}Texto Verbatim}{10}
+\contentsline {chapter}{\numberline {9}Listas numeradas}{11}
+\contentsline {chapter}{\numberline {10}Margenes y tama\IeC {\~n}o de la caja de texto}{13}
+\contentsline {chapter}{\numberline {11}Tabla de contenidos y t\IeC {\'\i }tulo}{14}

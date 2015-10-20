@@ -1,0 +1,64 @@
+% http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics
+
+% latex -> \usepackage[dvips]{graphicx}
+% De esta forma podemos insertar archivos .eps
+
+% pdflatex -> 	\usepackage[pdftex]{graphicx}
+%				\usepackage{epstopdf}
+% De esta forma podemos insertar: .jpg, .png, .pdf y .eps; éste último requiere epstopdf
+
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage[utf8]{inputenc} % Soporte para acentos
+\usepackage[T1]{fontenc}    
+\usepackage[spanish,mexico]{babel} % Español
+
+% Para inserción de imagenes, compilando con pdflatex con imagenes en formato
+%.jpg,.png,.eps, .pdf
+%usepackage[pdftex]{graphicx}
+% El siguiente paquete permite la inclusión de archivos .eps, compilando con pdflatex
+%\usepackage{epstopdf}
+
+% Para inserción de imagenes, compilando con latex con los siguientes formatos:
+%.ps, .eps
+\usepackage[dvips]{graphicx}
+
+\usepackage{verbatim}
+
+\usepackage[lmargin=2cm,rmargin=2cm,top=2cm,bottom=2cm]{geometry}
+
+% Información para el título
+\title{Imagenes de mapa de bits y vectoriales}
+\author{J. Luis Torres}
+\date{12 de junio de 2015}
+
+\begin{document}
+
+
+\maketitle
+
+Ejemplos de figuras insertadas en un documento de \LaTeX{}.
+
+%Dependiendo de la imagen a utilizar el compilador sera diferenteperritosperritosperritosperritos
+
+%Entorno contenido en el paquete verbatim, para hacer un comentario multilinea
+%Es decir, comentar bloques de lineas para que no se compilen
+\begin{comment}
+\begin{figure}[h!]
+\centering
+%\includegraphics[scale=2]{Floral.jpg}
+\includegraphics{Floral2.jpg}
+\caption{Mapa de bits.}
+\end{figure}
+\end{comment}
+
+%\begin{comment}
+\begin{figure}[h!]
+\centering
+%\includegraphics[trim= 10px 50px 20px 5px,clip,scale=0.5]{Floral.eps}
+\scalebox{2}{\includegraphics*[50,660][130,740]{Floral.eps}}
+\caption{Vectorial.}
+\end{figure}
+%end{comment}
+
+\end{document}

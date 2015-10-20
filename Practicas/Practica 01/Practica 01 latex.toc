@@ -1,0 +1,5 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Hablemos un poco de \LaTeX {}}{2}{section.1}
+\contentsline {section}{\numberline {2}Pasos para poder inscribirse en un curso compartido por computo}{2}{section.2}
+\contentsline {section}{\numberline {3}\IeC {\textquestiondown }C\IeC {\'o}mo obtengo mi constancia de curso?}{3}{section.3}
+\contentsline {section}{\numberline {4}Unas cuantas f\IeC {\'o}rmulas matem\IeC {\'a}ticas}{3}{section.4}

@@ -1,0 +1,179 @@
+% Otros paquetes que pueden generar este tipo de diagramas son: tikz-cd, pb-diagram y amscd. Éste ultimo puede mostrar problemas de compatibilidad con la opción spanish del paquete babel.
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage[utf8]{inputenc} % Soporte para acentos
+\usepackage[T1]{fontenc}    
+\usepackage[spanish,mexico]{babel} % Español
+
+% Soporte de símbolos adicionales (matemáticas)
+\usepackage{amsmath}		
+\usepackage{amssymb}		
+\usepackage{amsfonts}
+\usepackage{latexsym}
+
+\usepackage[lmargin=2cm,rmargin=2cm,top=2cm,bottom=2cm]{geometry}
+
+%\usepackage{tikz}
+\usepackage[all]{xy}
+
+% Información para el título
+\title{Diagramas}
+\author{J. Luis Torres}
+
+\begin{document}
+
+\maketitle
+
+El paquete \textit{XY-pic} nos permite crear diagramas en \LaTeX. La forma de construirlos es usando una notación similar a la de las matrices. Por ejemplo:
+
+\bigskip
+
+\xymatrix{
+      A & B \\
+      C & D
+    }
+    
+\bigskip
+
+Para agregar flechas entre los elementos del diagrama, podemos hacer uso de la instrucción \verb@\ar@ y las letras \texttt{l} (left), \texttt{r} (right), \texttt{u} (up) y \texttt{d} (down). Con estos caracteres, o una combinación de ellos, podemos indicar la posición de las flechas. Por ejemplo:
+
+\bigskip
+
+\begin{equation*}
+\xymatrix{
+    A \ar[r] \ar[d] \ar[rd] & B \ar[d] \\
+    C \ar[r] & D
+}
+\end{equation*}
+
+\bigskip
+
+En este caso, la expresión ``\verb@A \ar[r] \ar[d] \ar[rd]@'' indica que, a partir del elemento \texttt{A}, debe colocarse una flecha hacia el elemento de la derecha (\verb@\ar[r]@), una segunda flecha hacia el elemento de abajo (\verb@\ar[r]@) y una flecha hacia el elemento que se encuentra a la derecha, abajo (\verb@\ar[rd]@). Como se muestra en este último ejemplo, la forma de centrar este tipo de diagramas se puede hacer uso del entorno \texttt{equation}.
+
+También podemos agregar texto a las flechas, incluyendo éste como índice o subíndice de la expresión ``\verb@\ar@''. Por ejemplo:
+
+\bigskip
+
+\begin{equation*}
+\xymatrix{
+    A \ar[r]^f \ar[d]_\phi \ar[rd] & B \ar[d]^\psi \\
+    C \ar[r]_g & D
+}
+\end{equation*}
+
+\bigskip
+
+Existen muchos tipos de flechas disponibles, entre las que se encuentran:
+
+\begin{verbatim}
+  @{.>}
+  @{-->}
+  @{=>}
+  @{=}
+  @{^{(}->}
+  @{->>}
+  @{|->}
+  @{~>}
+\end{verbatim}    
+
+Por ejemplo:
+
+\bigskip
+
+\begin{equation*}
+\xymatrix{
+    A \ar@{^{(}->}[r]^f \ar@{.>}[d]_\phi \ar@{=>}[rd] & B \ar@{=}[d]^\psi \\
+    C \ar@{->>}[r]_g & D
+}
+\end{equation*}
+
+\bigskip
+
+Se pueden introducir flechas curvas incluyendo las expresiones: ``@\verb@/^/@'' ó ``@\verb@/_/@''.
+
+\bigskip
+
+\begin{equation*}
+\xymatrix{ A \ar[r] & B \ar@/_/@{->}[l] }
+\end{equation*}
+
+\bigskip
+
+\begin{equation*}
+\xymatrix{
+    T \ar@/^/[rrd] \ar@/_/[rdd] \ar@{.>}[rd] \\
+    & A \ar[r] \ar[d] & B \ar[d]_\beta \\
+    & C \ar[r] & D \ar@/_/[u]_\alpha
+  }
+\end{equation*}
+
+\bigskip
+
+Podemos agregar una distancia que se agregará a la flecha para alejarla de una parte del diagrama:
+
+\bigskip
+
+\begin{equation*}
+\xymatrix{
+    T \ar@/^/[rrd] \ar@/_/[rdd] \ar@{.>}[rd] \\
+    & A \ar[r] \ar[d] & B \ar[d]_\beta \\
+    & C \ar[r] & D \ar@/_/[uull]_\alpha
+  }
+\end{equation*}
+
+\bigskip
+
+En el siguiente diagrama incluimos la expresión ``\verb@|!{[ur];[dr]}\hole@'' para indicar que una de las flechas debe mostrarse con dos segmentos de recta, para indicar que ésta se encuentra detras de otra de las flechas:
+
+\bigskip
+
+\begin{equation*}
+\xymatrix {
+    A \ar[rr] \ar[rd] \ar[dd] && B \ar[dd] \\
+    & C \ar[ru] \ar[dd] \\
+    A' \ar[rr] |!{[ur];[dr]}\hole \ar[rd] && B' \\
+    & C' \ar[ru] 
+    }
+\end{equation*}
+
+\bigskip
+
+Podemos hacer lo mismo para las flechas verticales, incluyendo la expresión:
+
+``\verb@|!{[dl];[dr]}\hole@'':
+
+\bigskip
+
+\begin{equation*}
+\xymatrix {
+    A \ar[rr] \ar[dd] \ar[dr] && B \ar[dr] \ar[dd] |!{[dl];[dr]}\hole \\
+    & A \ar[rr] \ar[dd] && B' \ar[dd] \\
+    C \ar[rr] |!{[ur];[dr]}\hole \ar[dr] && D \ar[rd] \\
+    & C' \ar[rr] && D' \\
+  }    
+\end{equation*}
+
+\bigskip
+
+En el siguiente diagrama colocamos flechas que apuntan al mismo elemento en el que se originan:
+
+\bigskip
+
+\begin{equation*}
+\xymatrix{
+    A \ar@(ul,dl)[] \ar@/^/[r] & 
+    B \ar@(ur,dr)[] \ar@/^/[l] 
+}
+\end{equation*}
+ 
+\bigskip
+
+En este ultimo ejemplo usamos la expresión ``\texttt{@(salida, entrada)}'', en donde salida y entrada pueden ser \texttt{u}, \texttt{d}, \texttt{r}, \texttt{r}, \texttt{ur}, \texttt{ud}, \texttt{ul}, \texttt{dl}, éstas se usan para indicar en que dirección debe salir la flecha y en que dirección debe entrar en su destino. Por ejemplo:
+
+\bigskip
+
+\begin{equation*}
+\xymatrix{A\ar@(ul,dl)[]\ar@(ur,r)[r] &B}
+\end{equation*}
+
+\end{document}

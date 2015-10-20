@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,mexico]{babel}
+ 
+\usepackage{natbib}
+\usepackage{apalike}
+% Opciones aplicables a natbib
+% round - Paréntesis redondos.
+% square - Paréntesis cuadrados.
+% curly - Llaves.
+% angle - Corchetes angulados.
+% colon - Separar múltiples citas con dos puntos.
+% comma - Usar una coma como separador.
+% authoryear - Citas authoryear.
+% numbers - Citas numéricas.
+% super - Citas numéricas con superscripts.
+% sort - Ordenar citas múltiples en el orden en que aparecen en la lista de referencias.
+% sort&compress - Igual que sort pero las citas pueden aparecer comprimidas.
+
+%\usepackage[nottoc]{tocbibind}
+ 
+ %Para compilar: 1. pdflatex, despues 2.bibtex y otras dos veces pdflatex
+\title{Uso de bibliografía con \texttt{natbib}}
+\author{Chucho Pérez}
+\date{}
+ 
+\begin{document}
+ 
+\maketitle
+ 
+En este documento hacemos uso del paquete \texttt{natbib} para introducir la bibliografía. 
+
+Veremos algunos ejemplos de referencias para el libro \textit{The \LaTeX{} Companion} \citet{latexCompanion}, el artículo 
+\textit{Creación de Documentos Científicos} \citep[página 90]{lamportLatex} y el sitio de \textit{CTAN} \cite{ctanWebsite}.
+
+Las referencias \cite{latexCompanion,lamportLatex} corresponden a publicaciones en papel.
+
+Consulte~\citet*{latexCompanion} para mayor referencia sobre tablas.
+
+\citep[vea][página 90]{lamportLatex}, es un libro clásico de Lamport.
+
+\citeauthor{lamportLatex}, \citeyear{lamportLatex}, \citeyearpar{lamportLatex}.
+
+\medskip
+ 
+%Estilos para la bibliografia(solo se usa uno)
+\bibliographystyle{unsrtnat}
+%\bibliographystyle{dinat}
+%\bibliographystyle{humannat}
+%\bibliographystyle{plainnat}
+%\bibliographystyle{abbrvnat}
+%\bibliographystyle{unsrtnat}
+%\bibliographystyle{rusnat}
+%\bibliographystyle{unsrtnat}
+
+% Otras posibilidades son: abbrv, acm, alpha, apalike, ieeetr, plain, siam y unsrt. Éstos se pueden usar sin natbib.
+%\bibliographystyle{apalike}
+%\bibliographystyle{chicago}
+
+\bibliography{articulos,libros}
+ 
+\end{document}

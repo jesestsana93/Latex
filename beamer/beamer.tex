@@ -1,0 +1,80 @@
+%beamer permite crear presentaciones(diapositivas)
+\documentclass{beamer}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, mexico]{babel}
+\usepackage{amsmath, latexsym, amsfonts}
+
+\usepackage{hyperref}
+
+%Temas
+%\usetheme{Rochester}
+%\usetheme{Dresden}
+\usetheme{AnnArbor}
+\usecolortheme{beaver}
+
+\usecolortheme{seagull}
+% Para obtener más temas y colores consultar:
+% http://www.hartwork.org/beamer-theme-matrix/
+% http://mike.depalatis.net/beamerthemes/
+% http://deic.uab.es/~iblanes/beamer_gallery/
+
+\title{Edición de texto con \LaTeX}
+\author{Juan Carlos Pérez}
+
+\begin{document}
+
+\begin{frame}
+		\titlepage
+\end{frame}
+
+\begin{frame}
+		\tableofcontents
+\end{frame}
+
+\section{Uno}
+
+\begin{frame}
+    \frametitle{¿Qué es Beamer?}\transduration{2}%Segundos a esperar en esta parte
+    \begin{itemize}
+      \item Un paquete para la creación de presentaciones en \LaTeX{}. \pause 
+      \item Permite trabajar con los comandos de \LaTeX{}. \pause
+      \item Adecuado para el uso de expresiones matemáticas y otros tales como:
+      \begin{itemize}
+        \item Secciones.\pause
+        \item Expresiones matemáticas.\pause
+        \item Imagenes.\pause
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+	La gráfica de la función es la siguiente:
+	\begin{center}	
+%	\includegraphics[scale=•]{•}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Otra diapositiva} 
+	Para crear diapositivas con \LaTeX{} procedemos de la siguiente forma:
+	\begin{enumerate}
+	\item Indicar \textit{beamer} como clase de documento
+	\item Especificar el tema a usar
+	\item Seleccionar esquema de colroes
+	\item Introducir \textbf{frames}
+	\end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Otra diapositiva} \transduration{2}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Otra diapositiva} \transduration{0.5}
+\end{frame}
+
+\end{document}

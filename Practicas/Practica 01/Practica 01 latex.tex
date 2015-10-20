@@ -1,0 +1,128 @@
+% Aquí comienza el preámbulo
+\documentclass[letterpaper,12pt]{article}
+
+% Soporte para acentos. En Windows se puede usar latin1 o utf8, se recomienda utf8
+\usepackage[utf8]{inputenc}
+% Español, división de sílabas
+\usepackage[spanish,mexico]{babel}
+% Usar codificación T1
+\usepackage[T1]{fontenc}
+
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{setspace}
+
+\doublespacing
+%Paquetes para matemáticas
+\usepackage{amsmath}		
+\usepackage{amssymb} 		
+\usepackage{amsfonts}
+\usepackage{latexsym}
+
+\topmargin = -2cm
+\oddsidemargin= 0cm
+\textheight = 23cm
+\textwidth = 17cm
+
+\title{Práctica 01 \LaTeX{}}
+\author{Jesús Esteban Sánchez Alcántara}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage 
+\section{Hablemos un poco de \LaTeX{}}
+\begin{multicols}{2}
+\LaTeX{} es un sistema de composición de textos que está formado mayoritariamente por órdenes no
+construidas a partir de comandos de TeX —un lenguaje «de nivel bajo», en el sentido de que sus
+acciones últimas son muy elementales— pero con la ventaja añadida de «poder aumentar las
+capacidades de \LaTeX{} utilizando comandos propios del TeX descritos en \textbf{\textit{The TeXbook}}
+».3 4. Esto es lo que convierte a \LaTeX{} en una herramienta práctica y útil pues,a su facilidad de uso,
+se une toda la potencia de TeX. Estas características hicieron que \LaTeX{} se extendiese rápidamente 
+entre un amplio sector científico y técnico, hasta el punto de convertirse en uso obligado en comunicaciones
+y congresos, y requerido por determinadas revistas a la hora de entregar artículos académicos.
+\end{multicols}
+
+
+\section{Pasos para poder inscribirse en un curso compartido por computo}
+Para poder asistir a un curso impartido por computo es necesario seguir estos pasos:
+\begin{enumerate}
+	\item Revisar tu correo y estar atento a la convocatoria
+	\item Entrar a la página \href{http://computo.fciencias.unam.mx:9090/Cursos/index}                   {\textbf{http://computo.fciencias.unam.mx:9090/Cursos/index}}
+	\item Escoger el curso de tu agrado
+	\item Llenar el formulario
+	\item Esperar correo de respuesta \\
+
+Si fuiste aceptado te llegara un correo de confirmación
+\setcounter{enumi}{6}
+\item Llega al primer día de clase y hechale ganas el resto del curso
+\end{enumerate}
+
+
+\section{¿Cómo obtengo mi constancia de curso?}
+Para poder obtener la constancia es necesario cumplir con los siguientes requisitos:
+\begin{enumerate}
+	 \item[$\bigstar$] Verificar que mi nombre este bien escrito en la lista del curso, de no ser asi avisar al instructor
+	 \item[$\bigstar$] Asistir al menos al 80 \% de las clases
+	 \item[$\bigstar$] Entregar las practicas
+	 \item[$\bigstar$] Esperar un correo de cursos.computo@ciencias.unam.mx que diga donde y a partir de que fecha puedes
+	 \item[$\bigstar$] Recoger tu constancia	
+	 \item[$\bigstar$] Recoger tu constancia y ser feliz :-)
+\end{enumerate}
+
+
+\section{Unas cuantas fórmulas matemáticas}
+
+$$\sum_{\overset{k=0}{k\neq j}}^{\infty} a_k$$
+$$z=|z|(cos \varphi + i sen \varphi) $$
+$$|a cos x + b sen x| \leq \sqrt{{a}^2 + {b}^2} $$
+\[\left[ \begin{array}{ccc}
+	1 & \hdots & 1 \\
+	\vdots & \ddots & \vdots \\
+	1 & \hdots & 1 
+\end{array}
+\right]
+\]
+
+\[\left\{\begin{array}{c}
+	x^{t^{n^{2}}}
+\end{array}
+\right\}
+\]
+
+$${x_n \underset{{n \to \infty}}{\longrightarrow} x}$$
+
+\[
+f(n)= \left\{ 
+\begin{array}{ccc}
+	n/2 & \mbox{si n es par } \\	
+	3n+1 & \mbox{si n es impar } 
+\end{array}
+\right.
+\]
+
+\[ \lim_{x \to +\infty} f(x) \]
+$$p_k(x)= \prod_{\overset{i=1}{i\neq k}}^{n} \left( \frac{x-t_i}{t_k-t_i} \right)$$
+
+\begin{equation}
+\left( \frac{1}{2} \right)= \displaystyle \left[ {1 \over 2}\right] = 
+\displaystyle \left | \frac{1}{2} \right | = \left\{ \frac{1}{2} \right\} =
+\left \langle \frac{1}{2} \right \rangle
+\end{equation}
+
+\[
+Arreglo_7 = \left\{\begin{array}{ccccc}
+	\displaystyle  \sum_{\overset{k=0}{k\neq j}}^{\infty} a_k & |z| & cos \varphi & sen \varphi & \beta \\
+	n/2 & 3n+1 & f(n) & \delta & \pi \\
+	\frac{1}{2} & \lim_{x \to +\infty} f(x) \ & \pi & 8 & \sqrt[5]{2 \phi^2 + \beta^3} \\	
+	-9.5 & 5,8 & 17,8 & -\infty & \frac{75 x}{x-1}
+\end{array}
+\right\}
+\]
+
+\end{document}

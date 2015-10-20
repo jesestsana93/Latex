@@ -1,0 +1,364 @@
+% Aquí comienza el preámbulo
+\documentclass[letterpaper,12pt]{article}
+
+% Este es un comentario
+
+% Soporte para acentos. En Windows se puede usar latin1 o utf8, se recomienda utf8
+\usepackage[utf8]{inputenc}
+% Español, división de sílabas
+\usepackage[spanish,mexico]{babel}
+% Usar codificación T1
+\usepackage[T1]{fontenc}
+
+% Algunos paquetes que necesitaremos más adelante
+\usepackage{multicol}
+\usepackage{enumerate}
+
+\usepackage{setspace}
+%Los siguientes se aplican a todo el documento
+%doublespacing
+%onehalfspacing
+%singlespace
+%Que interlineado queremos \setstrech{2.5}
+
+%Paquete que se usa para quitar numeracion a las lineas de texto
+\usepackage[right]{lineno}
+%\linenumbers
+%Para alternar la numeracion en los libros(una pagina izquierdo y otro con numeracion 
+%en la derecha) se usa \pagewiselinenumbers
+%\modulolinenumbers[4]
+
+%Paquete usado para ponerle marco a la pagina \usepackage{showframe}
+
+% Una forma de establecer los márgenes
+%\topmargin = -2cm
+%\oddsidemargin= 0cm
+%\textheight = 23cm
+%\textwidth = 17cm
+
+%\usepackage[margin=2cm,rmargin=3cm,top=3cm,bottom=2cm,paperwidth=50cm,paperheight=90cm]{geometry}
+
+
+%Especifica el tamaño de la fuente a usar en el documento
+%\usepackage{scrextend}
+%\changefontsizes{70pt}
+
+\usepackage{anyfontsize}
+\usepackage{color}
+
+% Indentación en la primera linea
+%\parindent=0mm
+
+\title{{\color{blue} Mi primer documento en \LaTeX{}}}
+\author{Jesus Sanchez\\Fulanito x}
+\date{9 de junio de 2015}
+
+% Aquí termina el preámbulo e inmediatamente abajo inicia el cuerpo del documento
+%%%%%%%%%%%
+%%%%  Ninguna de las expresiones anteriores debe aparecer dentro del cuerpo del documento
+%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+{\color {red}{\fontsize{70}{75}\selectfont Ejemplo de documento \LaTeX{}}} de la clase {\ttfamily article} con una estructura básica. 
+Incluye secciones, subsecciones y referencias cruzadas. También se incluyen listas numeradas,
+listas no numeradas y referencias cruzadas.
+
+
+% Nueva seccion
+\section{Formato de texto}
+
+Veamos algunas otras maneras de dar formato al texto.
+
+Podemos hacer uso de diferentes tipos de letra, por ejemplo:
+%Nota al margen
+\marginpar{En esta seccion revisamos algunos tipos de fuentes}
+\textrm{Este texto está en Romanas}
+
+% Otra forma es {\rm }
+{\rm Otro texto en romanas}
+
+\smallskip
+
+\emph{Enfática}
+% Otra forma es {\em }
+
+\smallskip
+
+\textbf{Negritas}
+% Otra forma es {\bf }
+
+\medskip
+
+\textit{itálicas}
+% Otra forma es {\it }
+
+\bigskip
+
+\textsl{Slanted}
+% Otra forma es {\sl }
+
+\smallskip
+
+\textsf{Sans Serif}
+% Otra forma es {\sf }
+
+\smallskip
+
+\textsc{Small Caps}
+% Otra forma es {\sc }
+
+\smallskip
+
+\texttt{Typewriter}
+% Otra forma es {\tt }
+
+\underline{Subrayado}
+
+Estos tipos de letras se pueden combinar para producir, por ejemplo, letras itálicas negritas: \textbf{\textit{ejemplo}}.
+
+
+% Nueva seccion
+\section{Tamaño de letras}
+%\begin{singlespacing}
+%\begin{onehalfpacing}
+%\begin{spacing}{2.5}
+%begin{linenumbers}
+\begin{doublespacing}
+Al igual que con los estilos de la fuente, tambien podemos especificar un tamaño para las letras, basado en el tamaño de la fuente que utiliza el documento actual.
+\end{doublespacing}
+
+Una forma de especificar estos tamaños es como se muestra a continuacion:
+
+% Colocar esto en una lista no numerada
+{\tiny tiny} %para la fuente mas pequeña se usa tiny
+% también se puede utilizar \begin{tiny} ... \end{tiny}
+
+{\scriptsize scriptsize}
+% también se puede utilizar \begin{scriptsize} ... \end{scriptsize}
+
+{\small small}
+% también se puede utilizar \begin{small} ... \end{small}
+
+{\normalsize normal}
+
+{\large large}
+% también se puede utilizar \begin{large} ... \end{large}
+
+{\Large Large}
+% también se puede utilizar \begin{Large} ... \end{Large}
+
+{\LARGE LARGE}
+% también se puede utilizar \begin{tiny} \end{tiny}
+
+{\huge huge}
+% también se puede utilizar \begin{huge} ... \end{huge}
+
+{\Huge Huge}
+% también se puede utilizar \begin{Huge} ... \end{Huge}
+
+Todos estos tamaños están basados en el tamaño de la fuente del documento.
+
+Estos tamaños se pueden combinar con los estilos de la sección anterior, por ejemplo:
+
+%Entorno
+\begin{Large}
+\textbf{\textit{Ojalá aprenda algo de \LaTeX.}}
+\end{Large}
+
+% Nueva seccion
+\section{Texto centrado}
+
+Se puede indicar que una parte del documento aparezca centrado en la caja de texto mediante el siguiente ambiente:
+
+\begin{center}
+\LARGE{\textbf{\textit{\LaTeX es \\ divertido!!!}}}
+\end{center}
+
+% Nueva seccion
+\section{Texto alineado a la derecha}
+
+La siguiente expresión nos permite colocar texto alineado a la derecha:
+
+\hfill Este texto aparecerá alineado al margen derecho.
+
+En este caso solamente alineamos a la derecha \hfill una parte.
+
+Podemos incluir una linea o puntos de la siguiente forma:
+
+Sección 1 \hrulefill Página 17
+
+Sección 2 \dotfill Página 24
+
+% Nueva seccion
+\section{Espacios verticales y horizontales}
+
+Los espacios horizontales se pueden introducir mediante la expresión:
+
+\hspace{2in}Dos pulgadas.
+
+\hspace{3cm}Tres centimetros.
+\hspace{3.5cm}
+
+\hspace{50pt}Cincuenta puntos.
+
+\hspace{3em} em
+
+\hspace{-3cm}En el margen.
+
+$x_{2}$ \hspace{4cm} $x^{2}$
+
+Los espacios verticales se pueden introducir de la siguiente forma:
+
+\vspace{2cm}Texto ubicado dos centimetros abajo.
+
+\vspace{-5cm} \hspace{6cm} Texto ubicado 5 cm arriba y 6 a la derecha.
+
+\vspace{3cm}
+
+% Nueva seccion
+\section{Uso de columnas}
+
+La instruccion \textit{multicols} nos permite introducir texto en columnas. Para poder hacer uso de esto es necesario cargar el paquete \textbf{multicol}. Veamos un ejemplo:
+
+% Colocar en 2 columnas
+Este es  un ejemplo de texto en dos columnas, puede notarse que \LaTeX{} se encarga de distrobuir el texto de tal forma que las columnas se muestren de igual tamaño. De la misma forma se puede introducir texto en tres o más columnas.\\
+Para el caso de dos columnas se puede hacer uso de \textbf{twocolumn}.\\
+También se puede indicar el tamaño de cada una de las columnas, pero para esto es necesario hacer uso del ambiente \textbf{\textbackslash minipage} 
+o de \textbf{\textbackslash parbox}.
+% fin de las tres columnas
+
+% Nueva pagina
+%\pagebreak
+
+% Nueva seccion
+\section{Notas al pie}
+
+Las notas al pie se pueden introducir mediante el comando \textit{footnote}:
+
+Este comando debe colocarse en el lugar en el que aparecerá la referencia a la nota. \footnote{La dirección del sitio oficial de \LaTeX{} es http://www.ctan.org/}.
+
+% Nueva seccion
+\section{Texto Verbatim}
+
+El entorno \textbf{verbatim} nos permite introducir un bloque de texto en el que se va a respetar la forma del texto y los espacios. Por ejemplo:
+
+% Colocar en verbatim
+Este texto       debe aparecer   exactamente como lo escribimos.
+
+Se deben respetar los espacios y
+
+saltos de linea. \textbf{negritas} 
+\textit{itálicas}
+% fin de verbatim
+
+El uso más común de este entorno es para introducir código fuente de algún lenguaje de programación.
+
+% Nueva seccion
+\section{Listas numeradas}
+
+Este tipo de listas se pueden introducir mediante el entorno \textit{enumerate}
+
+Primer paso
+Segundo paso
+Tercer paso
+
+Se puede indicar un tipo diferente de numeración de la siguiente forma:
+
+%\begin{enumerate}[I]
+Primer paso
+Segundo paso
+Tercer paso
+% En esta lista incluir los pasos que se deben seguir para compilar un archivo haciendo uso del
+% compilador latex
+
+\bigskip
+
+%\begin{enumerate}[a]
+Primer paso
+Segundo paso
+Tercer paso
+
+Se puede indicar el tipo de número mediante los caracteres: \textit{a, A, I, i, 1}.
+
+Este tipo de listas también pueden anidarse, por ejemplo:
+
+\begin{enumerate}
+	\item Primer paso
+		\begin{enumerate}
+			\item Verificar primero ..
+			\item Verfiricar después ...
+			\item Ahora ya podemos continuar.
+		\end{enumerate}
+	\item Segundo paso
+	\item Tercer paso
+\end{enumerate}
+
+También podemos indicar el número a usar para iniciar la numeración:
+
+\begin{enumerate}
+	\setcounter{enumi}{3}
+	\item Primer paso
+	\item Segundo paso
+	\item Tercer paso
+\end{enumerate}
+
+%\subsection{Listas no numeradas}
+
+Las listas no numeradas se pueden introducir mediante el entorno \textit{itemize} 
+
+Primer ítem
+Segundo ítem
+Tercer ítem
+
+Podemos modificar el tipo de símbolo usado en un item de la siguiente forma:
+
+\begin{itemize}
+	\item Primer ítem
+	\item[$\delta$] Segundo ítem
+	\item Tercer ítem
+\end{itemize}
+
+Si deseamos cambiar el tipo de viñeta usado en los items debemos incluir las siguientes expresiones en el preámbulo.
+
+\begin{verbatim}
+\renewcommand{\labelitemi}{$-$}
+\renewcommand{\labelitemii}{$\cdot$}
+\end{verbatim}
+
+De la misma forma, podemos indicar el tipo de números a usar para las listas numeradas:
+
+\begin{verbatim}
+\renewcommand{\labelenumi}{(\Roman{enumi})}
+\renewcommand{\labelenumii}{\Roman{enumi}.~\alph{enumii}}
+\end{verbatim}
+
+% Nueva seccion
+\section{Margenes y tamaño de la caja de texto}
+
+Ésta sección complementa a la seccion \ref{primera} incluyendo ejemplos de tablas escritas en \LaTeX.
+
+Podemos especificar el tamaño de los margenes y de la zona de texto mediante las siguientes expresiones:
+
+\begin{verbatim}
+\textheight = medida
+\textwidth = medida
+\topmargin = medida
+\oddsidemargin= medida
+\end{verbatim}
+
+Estos tamaños deben especificarse en el preámbulo.
+
+Se debe considerar que \LaTeX{} coloca diferente tamaño de margen para cada clase de documento.
+
+% Ultima seccion
+Tabla de contenidos y título
+
+Se puede introducir una tabla de contenidos de manera automática en nuestro documento mediante la expresión:
+
+\begin{verbatim}
+\tableofcontents
+\end{verbatim}
+
+\end{document}
