@@ -1,4 +1,4 @@
-\select@language {spanish}
+\babel@toc {spanish}{}
 \contentsline {chapter}{\'{I}ndice general}{\es@scroman {v}}
 \contentsline {part}{I\hspace {1em}The First Part}{1}
 \contentsline {chapter}{\numberline {1}About this Style}{2}

@@ -1,0 +1,133 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[spanish,mexico]{babel}
+\usepackage[utf8]{inputenc}
+
+%Parte de teorema y definición
+\usepackage{amsmath}
+\newtheorem{unadefi}{Definición}[section] % Formato 3.1, 3.2
+\newtheorem{unteo}{Teorema}[section] % Formato 3.1.1, 3.1.2
+
+
+\usepackage[shortlabels]{enumitem}
+\usepackage[x11names,table]{xcolor}%Parte de tablas
+
+
+
+\begin{document}
+
+\section{Ejemplos matemáticos}
+
+\begin{center}
+{\fboxsep 12pt
+\fcolorbox {orange}{white}{
+\begin{minipage}[t]{10cm}
+$0^0$ es una expresión indefinida.
+	$0^0$ es una expresión indefinida.
+	Si $a>0$ entonces $a^0=1$ pero $0^a=0.$
+	Sin embargo, convenir en que $0^0=1$ es adecuado para que
+	algunas fórmulas se puedan expresar de manera sencilla,
+	sin recurrir a casos especiales, por ejemplo
+	$$e^x=\sum _{n=0}^{\infty }\frac{x^n}{n!}$$
+	$$(x+a)^n=\sum_{k=0}^n \binom{n}{k}x^k a^{n-k}$$
+\end{minipage}
+}}
+\end{center}
+
+\[ \overbrace{(x_i-1)}^{K_i}f(x)+\underbrace{(x_i-1)}_{K_i}g(x)
+= K_i(f(x)+g(x)) \]
+
+$\pmb{\cos(x+2\pi)=\cos x}$
+
+\begin{equation}
+\log_{2}(xy)=\log_2x + \log_2y
+\end{equation}
+
+%El entorno itemize usa puntos u otros símbolos para los items mientras que description permite
+%descriptores con texto
+\begin{description}
+	\item[Media muestral:] $\frac{1}{n-1}\sum_{i=1}^n (X_i-\bar{X_n})^2$
+	\item[Varianza muestral:] $\frac{1}{n-1} \sum_{i=1}^n (X_i-\bar{X_n})^2$
+	\item[Momentos muestrales:] $\frac{1}{n} \sum_{i=1}^n X_i^k$
+\end{description}
+
+\section{Listas}
+
+\begin{enumerate}[label=\emph{\alph*})]
+	\item Uno\hrulefill Tiempo: 2:45 hrs
+	\item Dos \dotfill Tiempo: 2:45 hrs
+	\item tres \hfill Tiempo: 2:45 hrs
+	\rule[0.5cm]{11cm}{0.01cm}%\rule[xcm]{ycm}{zcm} . Este comando se usa para dibujar una línea horizontal o vertical de
+% ycm y grosor zcm. La distancia de la línea a la base del texto se controla con el primer parámetro [xcm].
+\end{enumerate}
+
+%Agregar un texto en negrita al item y correr margen izquierdo:
+\begin{enumerate}[label=\textbf{Idea (\emph{\alph*})}, leftmargin=2cm]
+	\item De nuevo Uno
+	\item Dos
+\end{enumerate}
+
+\begin{enumerate}
+	\item[\fbox{1.}] {\bf Procedimiento}{\em Aprendizaje}
+	\item[\fbox{2.}] {\bf comienzo} %Descriptor personalizado
+\end{enumerate}
+
+\newpage
+\begin{enumerate}[label=\emph{\Roman*})]
+	\item Primer nivel (en Romanos)
+	\item Nivel uno
+
+	\begin{enumerate}[label=\emph{\arabic*})]
+		\item Segundo nivel (en numeración arábiga)
+		\item Nivel dos
+
+		\begin{enumerate}[label=\emph{\alph*})]
+			\item Tercer nivel (numeración alfabética)
+			\item Nivel tres
+
+
+			\begin{enumerate}[label=\emph{$\bullet$})]
+				\item Cuarto nivel (usamos {\tt bullet})
+				\item Nivel máximo
+			\end{enumerate}
+		\end{enumerate}
+	\end{enumerate}	
+\end{enumerate}
+
+\section{Color en tablas}
+\begin{table}[h!]
+\centering
+\rowcolors{1}{}{gray!20}
+\begin{tabular}{ll}
+\rowcolor{LightBlue2} $x_{n+1}$ & $|x_{n+1}-x_n|$\\ \hline
+1.20499955540054 & 0.295000445\\
+1.17678931926590 & 0.028210236\\
+1.17650193990183 & 3.004$\times10^{-8}$\\
+1.17650193990183 & 4.440$\times10^{-16}$\\ \hline
+\end{tabular}
+\caption{Iteracion de Newton para $x^2-\cos(x)-1=0$ con $x_0=1.5.$}
+\end{table}
+
+\begin{tabular}{ll}
+\rowcolor{LightBlue2} $x_{n+1}$ & $|x_{n+1}-x_n|$\\ \hline
+\cellcolor[gray]{0.80} 1.20499955540054 & 0.295000445\\
+1.17678931926590 & 0.028210236\\
+1.17650196994274 & 0.000287349\\
+1.17650193990183 & 3.004$\times10^{-8}$\\
+\cellcolor[gray]{0.80} 1.17650193990183 & 4.440$\times10^{-16}$\\ \hline
+\end{tabular}
+
+\section{Teoremas}
+
+\begin{unadefi}
+Sean $a,b$ enteros con $b \not = 0.$ Decimos que $b$ divide a $a$
+si existe un entero $c$ tal que $a=bc.$
+\end{unadefi}
+
+\begin{unteo}
+Si $a,b \in Z$ y si $a|b\;$ y $\;b|a$ entonces $\;|a|=|b|$
+\end{unteo}
+
+
+\end{document}

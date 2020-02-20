@@ -1,0 +1,134 @@
+\documentclass[12pt]{book} % Clase de documento: libro y tamaño de letra
+ 
+\usepackage[spanish]{babel} % Manejo de idiomas
+ 
+\usepackage[latin1]{inputenc} % Escritura en castellano con acentos
+
+\title{Mi primer libro}
+ 
+\author{autor del libro, quien escribe}
+ 
+\date{\today}% Fecha actual
+ 
+\begin{document}
+ 
+\maketitle
+ 
+\frontmatter
+ 
+\tableofcontents
+ 
+\chapter{Introducci\'on}
+ 
+Aqu\'i escribo la introducci\'on. Cada p\'arrafo se separa con una l\'inea en blanco.
+ 
+\mainmatter
+ 
+\chapter{Primer cap\'itulo}
+ \section{Listas enumeradas}
+ Una lista enumerada se escribe dentro del ambiente enumerate, los 
+ n\'umeros son calculados autom\'aticamente:
+\begin{enumerate}
+ \item El nombre de la rosa
+ \item El p\'endulo de Foucault
+ \item La isla del d\'ia de antes
+\end{enumerate}
+
+\section{Listas no numeradas}
+El ambiente itemize se\~nala cada elemento con una ``bolita"
+\begin{itemize}
+\item Minix
+\item Linux
+\item AIX
+\end{itemize}
+
+\section{Listas descriptivas}
+En una lista descriptiva, el comando item toma como opci\'on un 
+texto que aparecera resaltado antes de cada elemento de la lista:
+\begin{description}
+\item{H} Hidr\'ogeno
+\item{He} Helio
+\item{Li} Litio
+\end{description}
+
+\section{Conclusi\'on}
+Para concluir diremos que  cada uno de los ambientes de lista se 
+puede anidar consigo mismo y con los otros ambientes de lista.
+
+
+ 
+\chapter{Segundo cap\'itulo}
+\section{Griego}
+La mayor\'ia de los comandos para escribir un s\'imbolo tienen 
+nombres m\'as o menos mnem\'onicos. Por ejemplo, las letras del 
+alfabeto griego se escriben con los comandos formados por la 
+diagonal inversa y el nombre ingl\'es de la letra en cuesti\'on:
+$\alpha, \beta, \gama$, etc\'etera. Para escribir una  letra griega  
+may\'uscula, el comando se forma con la diagonal inversa y el 
+nombre de la letra con la inicial en may\'uscula: $\Gamma, \Delta, 
+\Theta$, etc\'etera.
+
+\section{\'Indices}
+%Nota: El parrafo siguiente debe leerse como
+%Para escribir sub\'indice y supe\'indices se utilizan 
+%los s\'imbolos _ y ^ 
+%Para que \LaTeX{} imprima en este documento tales caracteres
+%se necesitan los comandos \_ y \^{}
+
+Para escribir sub\'indice y super\'indices se utilizan los s\'imbolos
+\_ y \^{}.  $a_1 = a_2 = a_3$, $x^2 + y^2 = r^2$ Cuando ambos 
+\'indices aparecen a la  vez, su orden no importa, as\'i $a_1^2$ se 
+ver\'a igual que $a^2_1$. Cuando el \'indice contiene mas que un 
+s\'olo caracter, hay que encerrarlo dentro de llaves:
+$A_{ij}= A_{ji}$.
+
+\section{Otros s\'imbolos}
+Las fracciones se obtienen as\'i: $\frac{numerador}{denominador}$, 
+las ra\'ices,  $\sqrt[n]{radicando}$. Los s\'imbolos de suma e 
+integral se obtienen as\'i: $\sum$, $\int$. Los l\'imites de estos 
+s\'imbolos se escriben como si fueran \'indices. 
+
+\chapter{Tercer cap\'itulo}
+
+El entorno para crear la tabla es tabular.
+
+En el c\'odigo fuente en la primera fila, vemos que tras iniciar el entorno tabular se introduce {l c r}. 
+Eso indica las columnas que tendrá
+nuestra tabla y su alineación (left, center, right). Si se quieren centrar todas las columnas, sería de esta forma {c c c}.
+
+Las filas se dividen en cada columna utilizando el s\'imbolo \& y se finaliza con \\, dando paso a la siguiente fila.
+
+\section{Tabla normal}
+
+\begin{tabular}{ l c r }
+   1 & 2 & 3 \\
+   4 & 5 & 6 \\
+   7 & 8 & 9 \\
+ \end{tabular}
+
+
+\subsection{Tabla con l\'ineas verticales}
+
+\begin{tabular}{| l | c | r | }
+   1 & 2 & 3 \\
+   4 & 5 & 6 \\
+   7 & 8 & 9 \\
+ \end{tabular}
+
+\subsection{Tabla con l\'ineas verticales, superior e inferior}
+\begin{tabular}{ | l | c | r | }
+ \hline                 
+   1 & 2 & 3 \\
+   4 & 5 & 6 \\
+   7 & 8 & 9 \\
+ \hline  
+ \end{tabular}
+
+
+
+\backmatter
+\chapter{Conclusi\'on}
+ 
+Aqu\'i escribo la conclusi\'on.
+ 
+\end{document}

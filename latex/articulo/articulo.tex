@@ -1,0 +1,61 @@
+\documentclass[12pt]{report} % Clase de documento: artículo y tamaño de letra
+ 
+\usepackage[spanish]{babel} % Manejo de idiomas
+ 
+\usepackage[latin1]{inputenc} % Escritura en castellano con acentos
+ 
+\title{Mi primer art\'iculo} % Título
+ 
+\author{Quien escribe} % Autor. Pueden ser varios agregando \and Otro autor
+ 
+\date{\today} % Fecha siempre actualizada al día presente al compilar.
+ 
+\begin{document} % Inicio del documento
+ 
+\maketitle % Hace la portada
+ 
+\tableofcontents % Hace el índice de contenidos.
+ 
+\section{Introducci\'on} % Primera sección, se incluye en el índice.
+ 
+Aqu\'i escribo la introducci\'on. Cada p\'arrafo se separa con una l\'inea en blanco.
+ 
+\section{Cuerpo del art\'iculo} % Otra sección.
+ 
+Puedo hacer que el texto vaya en cursiva con \emph{texto en cursiva}. Hacer una enumeraci\'on:
+ 
+\begin{enumerate}
+ 
+\item Linux
+ 
+\item Unix
+ 
+\item FreweBSD
+ 
+\end{enumerate}
+ 
+Las notas a  pie se hacen con\footnote{Texto que aparecer\'a en la nota a pie de p\'agina.}.
+ 
+\subsection{Comandos}
+Los comandos como part, chapter, section, subsection, etc, sirven 
+para dar estructura al texto. 
+
+\subsection{P\'arrafos}
+Por cierto, los p\'arrafos en \LaTeX{} se separan mediante l\'ineas 
+en blanco, no importa cuantas. De la misma manera, no importa el 
+n\'umero de caracteres en blanco que separan las palabras, pues 
+\LaTeX{} s\'olo los usa para distinguir entre una palabra y la
+siguiente.
+
+ 
+\section{Conclusi\'on}
+Aqu\'i escribo la conclusi\'on.
+\begin{thebibliography}{10}
+\bibitem[LATEX]{citalatex}E\'ito.Brun.Ricardo
+\textit{Lenguajes de marcas}TREA.2008
+%\url{http://www.matematicas.unam.mx}
+\end{thebibliography}
+ 
+\end{document} % Fin del documento.
+ 
+Esto que escribo no ser\'a incluido en el texto porque \end{document} le ha dicho que no contin\'ue con lo que sigue.

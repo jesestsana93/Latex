@@ -1,0 +1,40 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage[utf8]{inputenc} % Soporte para acentos
+\usepackage[T1]{fontenc}    
+\usepackage[spanish,mexico]{babel} % Español
+
+\usepackage[lmargin=2cm,rmargin=2cm,top=2cm,bottom=2cm]{geometry}
+
+
+\begin{document}
+\textbf{Mapa conceptual}\\
+
+\newenvironment{subgroup}
+  {$\left\{\tabular{l}}
+  {\endtabular\right.$}
+
+\textbf{Idea General}
+\begin{subgroup}
+  Idea Principal
+  \begin{subgroup}
+    Ideas Complementarias \\
+    Ideas Complementarias \\
+    Ideas Complementarias  
+  \end{subgroup} \\[2em]
+  Idea Principal
+  \begin{subgroup}
+    Ideas Complementarias \\
+    Ideas Complementarias \\
+    Ideas Complementarias  
+  \end{subgroup} \\[2em]
+  Idea Principal
+  \begin{subgroup}
+    Ideas Complementarias \\
+    Ideas Complementarias \\
+    Ideas Complementarias  
+  \end{subgroup}
+\end{subgroup}
+
+
+\end{document}
